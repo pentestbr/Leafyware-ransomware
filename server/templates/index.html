@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>LeafyWare</title>
+</head>
+<body>
+<br>
+<div class="jumbotron card border-success mb-3">
+<center>
+  <h1 class="display-7 text-success mx-auto"><strong>LeafyWare</strong></h1>
+  <p class="lead text-success mx-auto" ><strong>Pokimane has a boyfriend</strong></p>
+  <a href="/start"><button type="button" class="btn btn-outline-success btn-sm" >Dashboard</button></a>
+  <a href="/builder"><button type="button" class="btn btn-outline-success btn-sm" >Builder</button></a>
+</center>
+</div>
+<div class="container">
+<br>
+<img src="{{ url_for('static',filename="logo.png") }}" width="150" height="150"></img>
+<p class="text-danger">{{ bad }}</p>
+<p class="text-success"><strong>Version : {{ version }}</strong></p>
+<p class="text-success"><strong>Last update : {{ date }}</strong></p>
+<p class="text-success"><strong>Current cpu Usage : {{ Cpu }}%</strong></p>
+<p class="text-success "><strong>Current Memory Usage :  {{ Mem }}%</strong></p>
+<span class="badge badge-pill badge-primary">python</span>
+<span class="badge badge-pill badge-warning">go</span>
+<span class="badge badge-pill badge-info">fast af boi</span>
+<span class="badge badge-pill badge-dark">Open souce</span>
+</div>
+</body>
+</html>

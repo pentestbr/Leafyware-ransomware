@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>LeafyWare</title>
+</head>
+<body>
+<br>
+<div class="jumbotron card border-success mb-3">
+  <div class="container form-row">
+    <div class="container form-group col-md-7">
+        <div class="card border-success" style="max-width: 30rem;">
+            <div class="card-body row col-sm-9">
+                <h4 class="card-title text-danger">[✗]─[{{ user }}@{{ distro }}]</h4>
+                <br>
+                <p class="card-text text-success">Leafyware v0.1 <br> Coded by script1337 <br> https://github.com/ScRiPt1337/LeafyWare </p>
+            </div>
+        </div>
+    </div>
+    <div class="container form-group col-md-4">
+      <div class="card border-success mb-3" style="max-width: 20rem;">
+        <div class="card-header">LeafyWare</div>
+        <div class="card-body">
+          <p class="card-text text-success">This is open-source fun project Dont use it for illeage purposes I am not going to be responsable for anythink </p>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+<div class="container-fluid">
+<table class="table table-hover table-sm ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Ip</th>
+      <th scope="col">Country</th>
+      <th scope="col">Uniqe_iD</th>
+      <th scope="col">Iv key</th>
+      <th scope="col">Aes key</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in darkly %}
+    <tr>
+      <td scope="row">{{ row['id'] }}</td>
+      <td scope="row">{{ row['Username'] }}</td>
+      <td scope="row">{{ row['Ip'] }}</td>
+      <td scope="row">{{ row['Country'] }}</td>
+      <td scope="row">{{ row['Uniqe_iD'] }}</td>
+      <td scope="row">{{ row['Iv'] }}</td>
+      <td scope="row">{{ row['Aes'] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<a href="/admin" ><button type="button" id="startattack" class="btn btn-outline-danger btn-sm">Modify Data</button></a>
+</div>
+</body>
+</html>
