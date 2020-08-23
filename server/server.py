@@ -124,7 +124,7 @@ def startbuilding(data):
     cryptpath = data["cryptpath"]
     host = data["host"]
     wallpaper = data["wallpaper"]
-    writeline
+    
 
 
 
